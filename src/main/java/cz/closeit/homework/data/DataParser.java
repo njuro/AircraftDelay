@@ -1,6 +1,6 @@
 package cz.closeit.homework.data;
 
-import cz.closeit.homework.Flight;
+import cz.closeit.homework.model.Flight;
 import org.simpleflatmapper.csv.CellValueReader;
 import org.simpleflatmapper.csv.CsvMapper;
 import org.simpleflatmapper.csv.CsvMapperFactory;
@@ -10,12 +10,16 @@ import org.simpleflatmapper.util.ListCollector;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
  * Methods for parsing CSV file
  */
 public class DataParser {
+
+    private static Logger logger = Logger.getLogger("DataParser");
 
     /**
      * Parses CSV file into list of flights
@@ -24,6 +28,8 @@ public class DataParser {
      * @return list of flights
      */
     public static List<Flight> parseDataFile(File dataFile) {
+        logger.info("Parsing CSV file...");
+
         CsvMapper<Flight> mapper = configureMapper();
 
         List<Flight> flights = null;
@@ -31,10 +37,11 @@ public class DataParser {
             flights = CsvParser.mapWith(mapper)
                     .forEach(dataFile, new ListCollector<>())
                     .getList();
-        } catch (IOException e) {
-            System.err.println("Parsing of the file failed");
-            e.printStackTrace();
+        } catch (IOException ioe) {
+            logger.log(Level.SEVERE, "Parsing CSV failed", ioe);
         }
+
+        logger.info("Parsing successful, parsed " + flights.size() + " flights!");
 
         return flights;
     }

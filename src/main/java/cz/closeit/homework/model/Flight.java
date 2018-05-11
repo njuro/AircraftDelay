@@ -1,19 +1,11 @@
-package cz.closeit.homework;
+package cz.closeit.homework.model;
 
 
 public class Flight {
 
-    private int delay;
     private String airportCode;
+    private int delay;
     private boolean cancelled;
-
-    public int getDelay() {
-        return delay;
-    }
-
-    public void setDelay(int delay) {
-        this.delay = delay;
-    }
 
     public String getAirportCode() {
         return airportCode;
@@ -21,6 +13,14 @@ public class Flight {
 
     public void setAirportCode(String airportCode) {
         this.airportCode = airportCode;
+    }
+
+    public int getDelay() {
+        return delay;
+    }
+
+    public void setDelay(int delay) {
+        this.delay = delay;
     }
 
     public boolean isCancelled() {
@@ -34,8 +34,8 @@ public class Flight {
     @Override
     public String toString() {
         return "Flight{" +
-                "delay=" + delay +
-                ", airportCode='" + airportCode + '\'' +
+                "airportCode='" + airportCode + '\'' +
+                ", delay=" + delay +
                 ", cancelled=" + cancelled +
                 '}';
     }

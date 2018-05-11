@@ -15,11 +15,8 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>org.simpleflatmapper</groupId>
-            <artifactId>sfm-csv</artifactId>
-            <version>3.17.4</version>
-        </dependency>
+
+        <!-- Data loading -->
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
@@ -29,6 +26,13 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-compress</artifactId>
             <version>1.16.1</version>
+        </dependency>
+
+        <!-- Data parsing -->
+        <dependency>
+            <groupId>org.simpleflatmapper</groupId>
+            <artifactId>sfm-csv</artifactId>
+            <version>3.17.4</version>
         </dependency>
     </dependencies>
 
