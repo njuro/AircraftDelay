@@ -19,14 +19,13 @@ public class AircraftDelay {
 
     public static void main(String[] args) {
         double averageDelay = calculateAverageDelay();
-
-        System.out.printf("The average delay of arriving aircraft to LAX in 1999 was %.2f minutes\n", averageDelay);
-
         cleanUp();
+
+        System.out.printf("\nThe average delay of arriving aircraft to LAX in 1999 was %.2f minutes\n", averageDelay);
     }
 
     /**
-     * Calculates average arrival delay on LAX airport in 1999. Negative (early) arrival details are not taken
+     * Calculates average arrival delay on LAX airport in 1999. Negative (early) arrivals are also taken
      * into account.
      *
      * @return average delay
@@ -37,7 +36,7 @@ public class AircraftDelay {
 
         OptionalDouble delay = flights
                 .stream()
-                .filter(flight -> !flight.isCancelled() && flight.getAirportCode().equals("LAX") && flight.getDelay() >= 0)
+                .filter(flight -> !flight.isCancelled() && flight.getAirportCode().equals("LAX"))
                 .mapToInt(Flight::getDelay)
                 .average();
 

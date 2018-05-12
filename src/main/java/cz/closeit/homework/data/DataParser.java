@@ -9,6 +9,7 @@ import org.simpleflatmapper.util.ListCollector;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -32,7 +33,7 @@ public class DataParser {
 
         CsvMapper<Flight> mapper = configureMapper();
 
-        List<Flight> flights = null;
+        List<Flight> flights = new ArrayList<>();
         try {
             flights = CsvParser.mapWith(mapper)
                     .forEach(dataFile, new ListCollector<>())
