@@ -16,7 +16,7 @@ public class DataLoader {
 
     private static Logger logger = Logger.getLogger("DataLoader");
 
-    public static final String DATA_SOURCE = "http://stat-computing.org/dataexpo/2009/1999.csv.bz2";
+    public static final String DATA_SOURCE = "http://stat-computing.org/dataexpo/2009/1989.csv.bz2";
     public static final String COMPRESSED_DATA_PATH = "./compressed-data.bz2";
     public static final String DATA_PATH = "./data.csv";
 

@@ -21,11 +21,11 @@ public class AircraftDelay {
         double averageDelay = calculateAverageDelay();
         cleanUp();
 
-        System.out.printf("\nThe average delay of arriving aircraft to LAX in 1999 was %.2f minutes\n", averageDelay);
+        System.out.printf("\nThe average delay of arriving aircraft to LAX in 1989 was %.2f minutes\n", averageDelay);
     }
 
     /**
-     * Calculates average arrival delay on LAX airport in 1999. Negative (early) arrivals are also taken
+     * Calculates average arrival delay on LAX airport in 1989. Negative (early) arrivals are also taken
      * into account.
      *
      * @return average delay
